@@ -1,25 +1,29 @@
-﻿// Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
+﻿// Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1.
+//Выполнить с помощью рекурсии.
 
 // N = 5 -> "5, 4, 3, 2, 1"
 // N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 
+int n = InputNumbers("Введите натуральное число от 1 : ");
+Console.WriteLine();
+Console.WriteLine("вот такой у нас результат :");
+int count = 2;
+PrintNumber(n, count);
+Console.Write(1);
 
-
-
-Console.WriteLine("Введите натуральное число больше 1:");
-int number = int.Parse(Console.ReadLine());
-
-///Метод вывода натуральных чисел от N до 1:
-void NumberCounter (int number)
+void PrintNumber(int n, int count)
 {
-    if (number < 0) {
-        Console.Write($"{number} это не натуральное число! что ты там ввел?!");
-        };
-        if (number == 0) return;
-    Console.Write("{0,4}", number);
-    NumberCounter (number - 1);
+  if (count > n) return;
+  PrintNumber(n, count + 1);
+  Console.Write(count + ", ");
+
 }
 
-NumberCounter(number);
-Console.WriteLine();
-Console.WriteLine("вот такой у нас результат");
+int InputNumbers(string input) 
+{
+  Console.Write(input);
+  int output = Convert.ToInt32(Console.ReadLine());
+  return output;
+}
+
+
