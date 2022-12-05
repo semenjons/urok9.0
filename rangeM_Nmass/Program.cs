@@ -8,9 +8,9 @@
 Console.WriteLine("Введите начальное число M:");
 int numberM = int.Parse(Console.ReadLine());
 
-Console.WriteLine("Введите следующую число N:");
+Console.WriteLine("Введите конечное число N:");
 int numberN = int.Parse(Console.ReadLine());
-
+int sum = 0;
 
 void TopNumberSum (int numberM, int numberN, int sum)
 {
